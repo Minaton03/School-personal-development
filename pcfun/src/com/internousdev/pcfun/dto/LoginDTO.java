@@ -29,5 +29,9 @@ public class LoginDTO {
 		this.loginFlg = loginFlg;
 	}
 	private boolean loginFlg=false;
+	public boolean getLoginFlg() {
+
+		return false;
+	}
 
 }

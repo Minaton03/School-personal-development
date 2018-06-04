@@ -10,15 +10,16 @@ import com.sun.corba.se.pept.transport.Connection;
 public class BuyItemDAO {
 	public BuyItemDTO getBuyItemInfo(){
 		DBConnector dbConnector = new DBConnector();
-		Connection connection = dbConnector.getConnection();
+		Connection connection = (Connection) dbConnector.getConnection();
 		BuyItemDTO buyItemDTO = new BuyItemDTO();
 
 		String sql="SELECT id,item_name,item_price FROM item_info_transaction";
 
 		try{
-			PreparedStatement preparedStatement=connection.preparedStatement(sql);
+			PreparedStatement preparedStatement=((java.sql.Connection) connection).prepareStatement(sql);
+			ResultSet resultSet = preparedStatement.executeQuery();
 
-			if(ResultSet.next()){
+			if(resultSet.next()){
 				buyItemDTO.setId(resultSet.getInt ("id"));
 				buyItemDTO.setItemName(resultSet.getString("item_name"));
 				buyItemDTO.setItemPrice(resultSet.getString("item_price"));
