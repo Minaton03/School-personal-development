@@ -52,10 +52,10 @@
 		<div id="pr">
 		</div>
 	</div>
-	<div id=main>
+	<div id="main">
 		<div id="top">
 			<p>Home</p>
-		</div>x
+		</div>
 		<div>
 			<s:form action="HomeAction">
 				<s:submit value="商品購入"/>

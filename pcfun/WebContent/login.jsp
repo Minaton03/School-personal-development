@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html">
 <html>
 <head>
@@ -58,7 +59,7 @@
 				<h3>購入するにはログインしてください。</h3>
 				<s:form action="LoginAction">
 					<s:textfield name="loginUserId"/>
-					<s:passsword name="loginPassword"/>
+					<s:password name="loginPassword"/>
 					<s:submit value="ろぐいん"/>
 				</s:form>
 				<br/>
